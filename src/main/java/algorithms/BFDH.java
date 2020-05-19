@@ -7,7 +7,7 @@ import structures.Plate;
 
 public class BFDH implements PackageAlgorithm {
 
-    public Plate execute(ArrayList<Detail> a) {
+    public Plate execute(ArrayList<Detail> a, int plate_width) {
         return null;
     }
 }

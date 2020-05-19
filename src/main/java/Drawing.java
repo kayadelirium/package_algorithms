@@ -37,7 +37,6 @@ class Drawing extends JFrame {
     }
 
     public void paint(Graphics g) {
-        Graphics gr = g;
         /*JFrame frame = new JFrame("Test");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().setBackground(Color.red);
@@ -47,16 +46,17 @@ class Drawing extends JFrame {
         g.setColor(Color.white);
         g.fillRect(0, 0, 2048, 1024);
         int k = 10;
-        for (int i = 0; i < details.size(); i++) {
-            gr.setColor(Color.black);
-            gr.drawRect(this.details.get(i).getX(), this.details.get(i).getY(),
-                    this.details.get(i).getWidth(), this.details.get(i).getHeight());
-            gr.setColor(new Color(123, 211, k));
-            gr.fillRect(this.details.get(i).getX()+1, this.details.get(i).getY()+1,
-                    this.details.get(i).getWidth()-1, this.details.get(i).getHeight()-1);
-            gr.setColor(Color.black);
-            gr.drawString("BALENCIAGA", this.details.get(i).getX(), this.details.get(i).getY()+100);
-            k+=20;
+        for (Detail detail : details) {
+            g.setColor(Color.black);
+            g.drawRect(detail.getX(), detail.getY(),
+                    detail.getWidth(), detail.getHeight());
+            g.setColor(new Color(123, 211, k));
+            g.fillRect(detail.getX() + 1, detail.getY() + 1,
+                    detail.getWidth() - 1, detail.getHeight() - 1);
+            g.setColor(Color.black);
+            g.drawString("BALENCIAGA", detail.getX(), detail.getY() + 100);
+            k += 20;
+            k %= 255;
         }
 
         //this.getContentPane().setBackground(Color.white);

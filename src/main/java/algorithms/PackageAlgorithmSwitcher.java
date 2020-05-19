@@ -15,7 +15,7 @@ public class PackageAlgorithmSwitcher {
     public void setPackageAlgorithm(PackageAlgorithm packageAlgorithm) {
         this.packageAlgorithm = packageAlgorithm;
     }
-    public Plate execute(ArrayList<Detail> detailArrayList){
-        return this.packageAlgorithm.execute(detailArrayList);
+    public Plate execute(ArrayList<Detail> detailArrayList, int plate_width){
+        return this.packageAlgorithm.execute(detailArrayList, plate_width);
     }
 }

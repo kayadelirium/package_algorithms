@@ -7,6 +7,6 @@ import structures.Plate;
 
 public interface PackageAlgorithm {
 
-    Plate execute(ArrayList<Detail> a);
+    Plate execute(ArrayList<Detail> a, int plate_width);
 
 }

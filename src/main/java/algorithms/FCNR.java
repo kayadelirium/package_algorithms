@@ -6,7 +6,7 @@ import structures.Plate;
 
 
 public class FCNR implements PackageAlgorithm {
-    public Plate execute(ArrayList<Detail> a) {
+    public Plate execute(ArrayList<Detail> a, int plate_width) {
         return null;
     }
 }

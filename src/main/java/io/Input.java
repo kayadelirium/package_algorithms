@@ -18,13 +18,15 @@ public class Input {
         Input.path = path;
     }
 
-    public static ArrayList<Detail> makeList(String sheetFrom, int firstRow, int col1, int col2) throws IOException {
+    public static ArrayList<Detail> makeList(String sheetFrom, int firstRow) throws IOException {
         list = new ArrayList<Detail>();
         XSSFWorkbook book = new XSSFWorkbook(new FileInputStream(path));
         XSSFSheet sheet = book.getSheet(sheetFrom);
         for (int i = firstRow; i <= sheet.getLastRowNum(); i++) {
             XSSFRow current = sheet.getRow(i);
-            list.add(new Detail((int) current.getCell(col1).getNumericCellValue(), (int) current.getCell(col2).getNumericCellValue()));
+            int numberOfDetails = (int) current.getCell(3).getNumericCellValue();
+            for(int num=0; num<numberOfDetails; num++)
+                list.add(new Detail( (int)current.getCell(0).getNumericCellValue (), (int)current.getCell(1).getNumericCellValue(), (int) current.getCell(2).getNumericCellValue()));
         }
         return list;
     }

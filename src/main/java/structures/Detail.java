@@ -1,15 +1,30 @@
 package structures;
 
+import java.util.Collection;
+import java.util.Comparator;
+
 public class Detail {
+    private int id;
     private int width;
     private int height;
     private int x;
     private int y;
-    public Detail(int width, int height){
+    public Detail(int id, int width, int height){
+        this.id = id;
         this.height = height;
         this.width = width;
         this.x = 0;
         this.y = 0;
+    }
+    public static class CompareByHeight implements Comparator<Detail> {
+
+        public int compare(Detail o1, Detail o2) {
+            return o2.getHeight() - o1.getHeight();
+        }
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getHeight() {
@@ -40,6 +55,16 @@ public class Detail {
     {
         setX(x);
         setY(y);
+    }
+
+    @Override
+    public String toString() {
+        return "Detail{" +
+                "width=" + width +
+                ", height=" + height +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
     }
 }
 
