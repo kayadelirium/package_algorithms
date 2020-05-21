@@ -39,7 +39,6 @@ public class FCNR implements PackageAlgorithm {
                 if (current_level.isSufficient(a.get(i).getWidth(), plate_width) && !placed) {// && (a.get(i).getHeight() <= current_level.getTop() - current_level.getBottom())) {
                     result.attach(a.get(i), current_level.getWidth(), current_level.getBottom());
                     current_level.increaseWidth(a.get(i).getWidth());
-                    temp = null;
                     placed = true;
                 } /*else {
                     tryX = current_level.getTopWidth() - a.get(i).getWidth();
@@ -47,7 +46,6 @@ public class FCNR implements PackageAlgorithm {
                     if (isPossible(tryX, tryY, current_level, result) && !placed) {
                         result.attach(a.get(i), tryX, tryY);
                         current_level.increaseTopWidth(a.get(i).getWidth());
-                        temp = null;
                         placed = true;
                     }
                 }*/
@@ -59,7 +57,6 @@ public class FCNR implements PackageAlgorithm {
                 if (isPossible(tryX, tryY, current_level, result) && !placed) {
                     result.attach(a.get(i), tryX, tryY);
                     current_level.increaseTopWidth(a.get(i).getWidth());
-                    temp = null;
                     placed = true;
                 }
             }
@@ -73,25 +70,9 @@ public class FCNR implements PackageAlgorithm {
                 if (plateHeight < temp.getTop()) {
                     plateHeight = temp.getTop();
                 }
-
-                placed = true;
             }
         }
-            /*if (temp != null) {
-                levels.add(temp);
-                if (plateHeight < temp.getTop()) {
-                    plateHeight = temp.getTop();
-                }*/
-        //Collections.sort(levels, new Level.CompareByWidth());
-
-        //Collections.sort(levels, new Level.CompareByTopWidth());
-        //Collections.min(levels, new Level.CompareByWidth())
-
-        //result.setHeight(levels.get(levels.size() - 1).getTop());
         result.setHeight(plateHeight);
-        for (Level level : levels) {
-            System.out.print(level.getWidth() + " ");
-        }
         return result;
     }
 }

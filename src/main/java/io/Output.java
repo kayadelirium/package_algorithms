@@ -72,12 +72,7 @@ public class Output{
             cell.setCellValue(detail.getY());
         }
 
-
-        // File file = new File(path);
-        // file.getParentFile().mkdirs();
         FileOutputStream outFile = new FileOutputStream(path);
         workbook.write(outFile);
-        //  System.out.println("Created file: " + file.getAbsolutePath());
-
     }
 }

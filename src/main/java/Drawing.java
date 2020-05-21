@@ -1,5 +1,7 @@
 import javax.swing.*;
+import javax.swing.text.Style;
 import java.awt.*;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 
 import structures.Detail;
@@ -13,43 +15,30 @@ class Drawing extends JFrame {
     public int windowWidth;
     public int windowHeight;
 
+    public Drawing(){
+        JLabel image = new JLabel("The plate is not wide enough for the given details set.");
+        image.setPreferredSize(new Dimension(300,50));
+        JOptionPane.showMessageDialog(null, image,"ERROR",JOptionPane.ERROR_MESSAGE);
+    }
+
     public Drawing(Plate plate){
-        super("DETAILS WITH TINA KANDELAKI");
+        super("DETAILS");
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBackground(Color.white);
-        //set
         setSize(1024, 1024);
+        setVisible(true);
 
-       setVisible(true);
-        /*JFrame frame = new JFrame("Test");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.getContentPane().setBackground(Color.red);
-        frame.setPreferredSize(new Dimension(400, 300));
-        frame.pack();
-        frame.setVisible(true);*/
         this.details = plate.getList();
         this.windowWidth = plate.getWidth();
         this.windowHeight = plate.getHeight();
 
-
         JLabel image = new JLabel("Empty space is " + plate.emptySpaces() + "%");
-        image.setPreferredSize(new Dimension(140,110));
-        JScrollPane js = new JScrollPane(image);
-
-        js.setPreferredSize(new Dimension(150,120));
-
-        JOptionPane.showMessageDialog(null, js);
+        image.setPreferredSize(new Dimension(100,80));
+        JOptionPane.showMessageDialog(null, image, "Info", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void paint(Graphics g) {
-        //Graphics gr = g;
-        /*JFrame frame = new JFrame("Test");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.getContentPane().setBackground(Color.red);
-        frame.setPreferredSize(new Dimension(400, 300));
-        frame.pack();
-        frame.setVisible(true);*/
         g.setColor(Color.pink);
         g.fillRect(0, 0, 2048, 1024);
         g.setColor(Color.black);
@@ -71,10 +60,5 @@ class Drawing extends JFrame {
             k += 10;
             k %= 255;
         }
-
-        //this.getContentPane().setBackground(Color.white);
-
-
     }
-
 }

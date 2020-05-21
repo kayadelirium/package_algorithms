@@ -17,12 +17,11 @@ public class NFDH implements PackageAlgorithm {
         int level_bottom = 0;
         level_height = a.get(0).getHeight();
         level_width += a.get(0).getWidth();
-        for (int i = 1; i < n; i++){
-            if (result.getWidth() - level_width >= a.get(i).getWidth()){
+        for (int i = 1; i < n; i++) {
+            if (result.getWidth() - level_width >= a.get(i).getWidth()) {
                 result.attach(a.get(i), level_width, level_bottom);
                 level_width += a.get(i).getWidth();
-            }
-            else{
+            } else {
                 result.attach(a.get(i), 0, level_height);
                 level_width = a.get(i).getWidth();
                 level_bottom = level_height;

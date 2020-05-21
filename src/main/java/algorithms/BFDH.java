@@ -21,48 +21,26 @@ public class BFDH implements PackageAlgorithm {
         levels.add(temp);
         for (int i = 1; i < n; i++) {
             boolean placed = false;
+            Collections.sort(levels, new Level.CompareByWidth());
             for (Level current_level : levels) {
                 if (current_level.isSufficient(a.get(i).getWidth(), plate_width) && !placed) {// && (a.get(i).getHeight() <= current_level.getTop() - current_level.getBottom())) {
                     result.attach(a.get(i), current_level.getWidth(), current_level.getBottom());
                     current_level.increaseWidth(a.get(i).getWidth());
-                    temp = null;
-                    placed = true;
-                } /*else if (current_level.getTop() == levels.get(levels.size()-1).getTop() && !placed) {
-                    temp = new Level(current_level.getTop(),
-                            current_level.getTop() + a.get(i).getHeight(),
-                            a.get(i).getWidth(), a.get(i).getHeight());
-                    result.attach(a.get(i), 0, current_level.getTop());
-                    placed = true;
-                }*/
-            }
-                if (!placed){
-                    temp = new Level(plateHeight,
-                            plateHeight + a.get(i).getHeight(),
-                            a.get(i).getWidth(), a.get(i).getHeight());
-                    result.attach(a.get(i), 0, plateHeight);
-                    levels.add(temp);
-                    if (plateHeight < temp.getTop()) {
-                        plateHeight = temp.getTop();
-                    }
-
                     placed = true;
                 }
             }
-            /*if (temp != null) {
+            if (!placed){
+                temp = new Level(plateHeight,
+                        plateHeight + a.get(i).getHeight(),
+                        a.get(i).getWidth(), a.get(i).getHeight());
+                result.attach(a.get(i), 0, plateHeight);
                 levels.add(temp);
                 if (plateHeight < temp.getTop()) {
                     plateHeight = temp.getTop();
-                }*/
-                //Collections.sort(levels, new Level.CompareByWidth());
-
-            Collections.sort(levels, new Level.CompareByWidth());
-            //Collections.min(levels, new Level.CompareByWidth())
-
-        //result.setHeight(levels.get(levels.size() - 1).getTop());
-        result.setHeight(plateHeight);
-        for (Level level : levels) {
-            System.out.print(level.getWidth() + " ");
+                }
+            }
         }
+        result.setHeight(plateHeight);
         return result;
     }
 }
