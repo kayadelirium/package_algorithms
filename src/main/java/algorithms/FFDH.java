@@ -13,9 +13,10 @@ public class FFDH implements PackageAlgorithm {
     public Plate execute(ArrayList<Detail> a, int plate_width) {
         Collections.sort(a, new Detail.CompareByHeight());
         ArrayList<Level> levels = new ArrayList<Level>();
+
         int n = a.size();
         Plate result = new Plate(plate_width);
-        Level temp = new Level(0, a.get(0).getHeight(), a.get(0).getWidth());
+        Level temp = new Level(0, a.get(0).getHeight(), a.get(0).getWidth(), a.get(0).getHeight());
         result.attach(a.get(0), 0, 0);
         levels.add(temp);
         for (int i = 1; i < n; i++){
@@ -30,7 +31,7 @@ public class FFDH implements PackageAlgorithm {
                 else if (current_level == levels.get(levels.size() - 1) && !placed){
                     temp = new Level(current_level.getTop(),
                             current_level.getTop() + a.get(i).getHeight(),
-                            a.get(i).getWidth());
+                            a.get(i).getWidth(), a.get(i).getHeight());
                     result.attach(a.get(i), 0, current_level.getTop());
                     placed = true;
                 }

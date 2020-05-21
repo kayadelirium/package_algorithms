@@ -37,6 +37,9 @@ public class Plate {
         this.height = height;
     }
 
+    public void setList(ArrayList<Detail> list) {
+        this.list = list;
+    }
 
     @Override
     public String toString() {

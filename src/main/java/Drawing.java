@@ -3,14 +3,17 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import structures.Detail;
+import structures.Plate;
 
 class Drawing extends JFrame {
 
     private static final long serialVersionUID = 1L;
 
-    ArrayList<Detail> details;
+    public ArrayList<Detail> details;
+    public int windowWidth;
+    public int windowHeight;
 
-    public Drawing(ArrayList<Detail> details){
+    public Drawing(Plate plate){
         super("DETAILS WITH TINA KANDELAKI");
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -25,9 +28,12 @@ class Drawing extends JFrame {
         frame.setPreferredSize(new Dimension(400, 300));
         frame.pack();
         frame.setVisible(true);*/
-        this.details = details;
+        this.details = plate.getList();
+        this.windowWidth = plate.getWidth();
+        this.windowHeight = plate.getHeight();
 
-        JLabel image = new JLabel("Empty space is " + 75);
+
+        JLabel image = new JLabel("Empty space is " + plate.emptySpaces() + "%");
         image.setPreferredSize(new Dimension(140,110));
         JScrollPane js = new JScrollPane(image);
 
@@ -37,25 +43,32 @@ class Drawing extends JFrame {
     }
 
     public void paint(Graphics g) {
+        //Graphics gr = g;
         /*JFrame frame = new JFrame("Test");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().setBackground(Color.red);
         frame.setPreferredSize(new Dimension(400, 300));
         frame.pack();
         frame.setVisible(true);*/
-        g.setColor(Color.white);
+        g.setColor(Color.pink);
         g.fillRect(0, 0, 2048, 1024);
-        int k = 10;
+        g.setColor(Color.black);
+        g.drawRect(100, 100, this.windowWidth, this.windowHeight);
+        g.setColor(Color.white);
+        g.fillRect(100, 101, this.windowWidth, this.windowHeight-1);
+        int k = 0;
         for (Detail detail : details) {
             g.setColor(Color.black);
-            g.drawRect(detail.getX(), detail.getY(),
+            g.drawRect(detail.getX() + 100, detail.getY() + 100,
                     detail.getWidth(), detail.getHeight());
-            g.setColor(new Color(123, 211, k));
-            g.fillRect(detail.getX() + 1, detail.getY() + 1,
+            g.setColor(new Color(123, k, 211));
+            g.fillRect(detail.getX() + 101, detail.getY() + 101,
                     detail.getWidth() - 1, detail.getHeight() - 1);
             g.setColor(Color.black);
-            g.drawString("BALENCIAGA", detail.getX(), detail.getY() + 100);
-            k += 20;
+            g.drawString(Integer.toString(detail.getId()),
+                    detail.getX() + 95 + detail.getWidth() / 2,
+                    detail.getY() + 105 + detail.getHeight() / 2);
+            k += 10;
             k %= 255;
         }
 
@@ -65,4 +78,3 @@ class Drawing extends JFrame {
     }
 
 }
-

@@ -28,33 +28,33 @@ public class Output{
         return style;
     }
     public static void createExcel(Plate list, int num) throws IOException {
-    XSSFWorkbook workbook = new XSSFWorkbook();
-    XSSFSheet sheet = workbook.createSheet("output" + num);
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("output" + num);
 
-    int rownum = 0;
-    Cell cell;
-    Row row;
+        int rownum = 0;
+        Cell cell;
+        Row row;
 
-    XSSFCellStyle style = createStyleForTitle(workbook);
-    row = sheet.createRow(rownum);
+        XSSFCellStyle style = createStyleForTitle(workbook);
+        row = sheet.createRow(rownum);
 
-    cell = row.createCell(0);
+        cell = row.createCell(0);
         cell.setCellValue("width");
         cell.setCellStyle(style);
 
-    cell = row.createCell(1);
+        cell = row.createCell(1);
         cell.setCellValue("height");
         cell.setCellStyle(style);
 
-    cell = row.createCell(2);
+        cell = row.createCell(2);
         cell.setCellValue("position_x");
         cell.setCellStyle(style);
 
-    cell = row.createCell(3);
+        cell = row.createCell(3);
         cell.setCellValue("position_y");
         cell.setCellStyle(style);
 
-    // Data
+        // Data
         for (Detail detail : list.getList()) {
             rownum++;
             row = sheet.createRow(rownum);
@@ -75,9 +75,9 @@ public class Output{
 
         // File file = new File(path);
         // file.getParentFile().mkdirs();
-    FileOutputStream outFile = new FileOutputStream(path);
+        FileOutputStream outFile = new FileOutputStream(path);
         workbook.write(outFile);
-      //  System.out.println("Created file: " + file.getAbsolutePath());
+        //  System.out.println("Created file: " + file.getAbsolutePath());
 
     }
 }
