@@ -9,4 +9,5 @@ public interface PackageAlgorithm {
 
     Plate execute(ArrayList<Detail> a, int plate_width);
 
+    String getName();
 }

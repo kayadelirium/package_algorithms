@@ -31,4 +31,7 @@ public class NFDH implements PackageAlgorithm {
         result.setHeight(level_height);
         return result;
     }
+    public String getName() {
+        return "NFDH";
+    }
 }

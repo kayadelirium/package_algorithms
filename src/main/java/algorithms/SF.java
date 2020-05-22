@@ -84,4 +84,7 @@ public class SF implements PackageAlgorithm {
         }
         return result;
     }
+    public String getName() {
+        return "SF";
+    }
 }

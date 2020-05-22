@@ -43,4 +43,8 @@ public class BFDH implements PackageAlgorithm {
         result.setHeight(plateHeight);
         return result;
     }
+
+    public String getName() {
+        return "BFDH";
+    }
 }

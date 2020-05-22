@@ -113,13 +113,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;, <a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html" title="interface in org.apache.poi.ss.usermodel">Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;, <a href="../../../../../org/apache/poi/ss/usermodel/ShapeContainer.html" title="interface in org.apache.poi.ss.usermodel">ShapeContainer</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</dd>
+<dd>java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;, <a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html" title="interface in org.apache.poi.ss.usermodel">io.Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;, <a href="../../../../../org/apache/poi/ss/usermodel/ShapeContainer.html" title="interface in org.apache.poi.ss.usermodel">ShapeContainer</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</dd>
 </dl>
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">XSSFDrawing</span>
 extends <a href="../../../../../org/apache/poi/ooxml/POIXMLDocumentPart.html" title="class in org.apache.poi.ooxml">POIXMLDocumentPart</a>
-implements <a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html" title="interface in org.apache.poi.ss.usermodel">Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</pre>
+implements <a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html" title="interface in org.apache.poi.ss.usermodel">io.Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</pre>
 <div class="block">Represents a SpreadsheetML drawing</div>
 </li>
 </ul>
@@ -304,7 +304,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html" tit
 <td class="colFirst"><code>org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDrawing</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/xssf/usermodel/XSSFDrawing.html#getCTDrawing--">getCTDrawing</a></span>()</code>
 <div class="block">Return the underlying CTDrawing bean, the root element of the
- SpreadsheetML Drawing part.</div>
+ SpreadsheetML io.Drawing part.</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
@@ -453,7 +453,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html" tit
 <pre><a href="../../../../../org/apache/poi/util/Internal.html" title="annotation in org.apache.poi.util">@Internal</a>
 public&nbsp;org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDrawing&nbsp;getCTDrawing()</pre>
 <div class="block">Return the underlying CTDrawing bean, the root element of the
- SpreadsheetML Drawing part.</div>
+ SpreadsheetML io.Drawing part.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the underlying CTDrawing bean</dd>
@@ -506,12 +506,12 @@ public&nbsp;org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDraw
                                      int&nbsp;row1,
                                      int&nbsp;col2,
                                      int&nbsp;row2)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html#createAnchor-int-int-int-int-int-int-int-int-">Drawing</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html#createAnchor-int-int-int-int-int-int-int-int-">io.Drawing</a></code></span></div>
 <div class="block">Creates a new client anchor and sets the top-left and bottom-right
  coordinates of the anchor.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html#createAnchor-int-int-int-int-int-int-int-int-">createAnchor</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html" title="interface in org.apache.poi.ss.usermodel">Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</code></dd>
+<dd><code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html#createAnchor-int-int-int-int-int-int-int-int-">createAnchor</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html" title="interface in org.apache.poi.ss.usermodel">io.Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>dx1</code> - the x coordinate in EMU within the first cell.</dd>
 <dd><code>dy1</code> - the y coordinate in EMU within the first cell.</dd>
@@ -573,11 +573,11 @@ public&nbsp;org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDraw
 <h4>createPicture</h4>
 <pre>public&nbsp;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFPicture.html" title="class in org.apache.poi.xssf.usermodel">XSSFPicture</a>&nbsp;createPicture(<a href="../../../../../org/apache/poi/ss/usermodel/ClientAnchor.html" title="interface in org.apache.poi.ss.usermodel">ClientAnchor</a>&nbsp;anchor,
                                  int&nbsp;pictureIndex)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html#createPicture-org.apache.poi.ss.usermodel.ClientAnchor-int-">Drawing</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html#createPicture-org.apache.poi.ss.usermodel.ClientAnchor-int-">io.Drawing</a></code></span></div>
 <div class="block">Creates a picture.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html#createPicture-org.apache.poi.ss.usermodel.ClientAnchor-int-">createPicture</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html" title="interface in org.apache.poi.ss.usermodel">Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</code></dd>
+<dd><code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html#createPicture-org.apache.poi.ss.usermodel.ClientAnchor-int-">createPicture</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html" title="interface in org.apache.poi.ss.usermodel">io.Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>anchor</code> - the client anchor describes how this picture is
                      attached to the sheet.</dd>
@@ -721,7 +721,7 @@ public&nbsp;org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDraw
 <div class="block">Creates a comment.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html#createCellComment-org.apache.poi.ss.usermodel.ClientAnchor-">createCellComment</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html" title="interface in org.apache.poi.ss.usermodel">Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</code></dd>
+<dd><code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html#createCellComment-org.apache.poi.ss.usermodel.ClientAnchor-">createCellComment</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html" title="interface in org.apache.poi.ss.usermodel">io.Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>anchor</code> - the client anchor describes how this comment is attached to
             the sheet.</dd>
@@ -739,11 +739,11 @@ public&nbsp;org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDraw
 <pre>public&nbsp;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFObjectData.html" title="class in org.apache.poi.xssf.usermodel">XSSFObjectData</a>&nbsp;createObjectData(<a href="../../../../../org/apache/poi/ss/usermodel/ClientAnchor.html" title="interface in org.apache.poi.ss.usermodel">ClientAnchor</a>&nbsp;anchor,
                                        int&nbsp;storageId,
                                        int&nbsp;pictureIndex)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html#createObjectData-org.apache.poi.ss.usermodel.ClientAnchor-int-int-">Drawing</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html#createObjectData-org.apache.poi.ss.usermodel.ClientAnchor-int-int-">io.Drawing</a></code></span></div>
 <div class="block">Adds a new OLE Package Shape</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html#createObjectData-org.apache.poi.ss.usermodel.ClientAnchor-int-int-">createObjectData</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Drawing.html" title="interface in org.apache.poi.ss.usermodel">Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</code></dd>
+<dd><code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html#createObjectData-org.apache.poi.ss.usermodel.ClientAnchor-int-int-">createObjectData</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/io.Drawing.html" title="interface in org.apache.poi.ss.usermodel">io.Drawing</a>&lt;<a href="../../../../../org/apache/poi/xssf/usermodel/XSSFShape.html" title="class in org.apache.poi.xssf.usermodel">XSSFShape</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>anchor</code> - the client anchor describes how this picture is
                      attached to the sheet.</dd>

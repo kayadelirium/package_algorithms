@@ -159,7 +159,7 @@ extends <a href="../../../../../org/apache/poi/hssf/record/AbstractEscherHolderR
  ...
  NoteRecord
  <p>
- To work with shapes we have to read data from Drawing and Continue records into single array of bytes and
+ To work with shapes we have to read data from io.Drawing and Continue records into single array of bytes and
  build escher(office art) records tree from this array.
  Each shape in drawing layer matches corresponding ObjRecord
  Each textbox matches corresponding TextObjectRecord
@@ -3964,7 +3964,7 @@ extends <a href="../../../../../org/apache/poi/hssf/record/AbstractEscherHolderR
 <pre>public static&nbsp;<a href="../../../../../org/apache/poi/hssf/record/EscherAggregate.html" title="class in org.apache.poi.hssf.record">EscherAggregate</a>&nbsp;createAggregate(java.util.List&lt;<a href="../../../../../org/apache/poi/hssf/record/RecordBase.html" title="class in org.apache.poi.hssf.record">RecordBase</a>&gt;&nbsp;records,
                                               int&nbsp;locFirstDrawingRecord)</pre>
 <div class="block">Collapses the drawing records into an aggregate.
- read Drawing, Obj, TxtObj, Note and Continue records into single byte array,
+ read io.Drawing, Obj, TxtObj, Note and Continue records into single byte array,
  create Escher tree from byte array, create map &lt;EscherRecord, Record&gt;</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

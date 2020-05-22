@@ -12,7 +12,7 @@ import structures.Detail;
 
 public class Input {
     private static String path;
-    static ArrayList<Detail> list;
+    private static ArrayList<Detail> list;
 
     public static void setPath(String path) {
         Input.path = path;

@@ -41,5 +41,9 @@ public class FFDH implements PackageAlgorithm {
         result.setHeight(levels.get(levels.size()-1).getTop());
         return result;
     }
+
+    public String getName() {
+        return "FFDH";
+    }
 }
 

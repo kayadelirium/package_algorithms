@@ -1,3 +1,5 @@
+package io;
+
 import javax.swing.*;
 import javax.swing.text.Style;
 import java.awt.*;
@@ -7,7 +9,7 @@ import java.util.ArrayList;
 import structures.Detail;
 import structures.Plate;
 
-class Drawing extends JFrame {
+public class Drawing extends JFrame {
 
     private static final long serialVersionUID = 1L;
 

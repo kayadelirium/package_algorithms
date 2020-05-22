@@ -52,4 +52,7 @@ public class Join implements PackageAlgorithm{
         plate.setList(newList);
         return plate;
     }
+    public String getName() {
+        return "Join";
+    }
 }

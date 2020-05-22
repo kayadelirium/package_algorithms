@@ -75,4 +75,8 @@ public class FCNR implements PackageAlgorithm {
         result.setHeight(plateHeight);
         return result;
     }
+
+    public String getName() {
+        return "FCNR";
+    }
 }

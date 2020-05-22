@@ -18,4 +18,7 @@ public class PackageAlgorithmSwitcher {
     public Plate execute(ArrayList<Detail> detailArrayList, int plate_width){
         return this.packageAlgorithm.execute(detailArrayList, plate_width);
     }
+    public String getName(){
+        return  this.packageAlgorithm.getName();
+    }
 }

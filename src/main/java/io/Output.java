@@ -2,6 +2,7 @@ package io;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -11,6 +12,7 @@ import structures.Plate;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Output{
 
@@ -20,16 +22,7 @@ public class Output{
         Output.path = path;
     }
 
-    private static XSSFCellStyle createStyleForTitle(XSSFWorkbook workbook) {
-        XSSFFont font = workbook.createFont();
-        font.setBold(true);
-        XSSFCellStyle style = workbook.createCellStyle();
-        style.setFont(font);
-        return style;
-    }
-    public static void createExcel(Plate list, int num) throws IOException {
-        XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("output" + num);
+    static void createSheet(XSSFWorkbook workbook, XSSFSheet sheet, Plate list) {
 
         int rownum = 0;
         Cell cell;
@@ -71,6 +64,19 @@ public class Output{
             cell = row.createCell(3);
             cell.setCellValue(detail.getY());
         }
+    }
+    static XSSFCellStyle createStyleForTitle(XSSFWorkbook workbook) {
+        XSSFFont font = workbook.createFont();
+        font.setBold(true);
+        XSSFCellStyle style = workbook.createCellStyle();
+        style.setFont(font);
+        return style;
+    }
+    public static void createExcel(Plate list, String sheetname) throws IOException {
+        XSSFWorkbook workbook = new XSSFWorkbook();
+
+        XSSFSheet sheet = workbook.createSheet(sheetname);
+        createSheet(workbook, sheet, list);
 
         FileOutputStream outFile = new FileOutputStream(path);
         workbook.write(outFile);
